@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="static/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <center>
+            <img src="{{url_for('load_img')}}" alt='img'>
+            
+            <div class='cont'>
+                {% if data[0] == 'akiec'%}
+                <h2>Tôi nghĩ bạn bị Actinic keratoses (akiec)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+          
+                <p> Là những biến thể của ung thư biểu mô tế bào vảy không xâm lấn, có thể điều trị tại chỗ mà không cần phẫu thuật. Là tiền thân của ung thư biểu mô tế bào vảy chứ không phải là ung thư biểu mô thực sự. Gây ra bởi tia UV nên vùng da xung quanh thường bị tổn thương nặng do ánh nắng mặt trời.</p>
+                
+                {% elif data[0] == 'bcc'%}
+                <h2>Tôi nghĩ bạn bị Basal cell carcinoma (bcc)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+             
+                <p> Ung thư biểu mô tế bào đáy là một biến thể phổ biến của ung thư da biểu mô, hiếm khi di căn nhưng phát triển hủy hoại nếu không được điều trị. Nó xuất hiện trong các biến thể hình thái khác nhau (phẳng, nốt sần, sắc tố, nang)</p>
+                
+                {% elif data[0] == 'bkl'%}
+                <h2>Tôi nghĩ bạn bị Benign keratosis-like lesions (bkl)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+                
+                <p> Là một nhóm chung bao gồm dày sừng tiết bã ("mụn cóc tuổi già"), mụn cóc mặt trời - có thể được coi là một dạng biến thể phẳng của dày sừng tiết bã - và địa y như dày sừng (LPLK), tương ứng với dày sừng tiết bã hoặc đậu lăng mặt trời với chứng viêm và thoái triển.</p>
+                
+                {% elif data[0] == 'df'%}
+                <h2>Tôi nghĩ bạn bị Dermatofibroma (df)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+                
+                <p> Là một tổn thương da lành tính được coi là một sự tăng sinh lành tính hoặc một phản ứng viêm đối với chấn thương tối thiểu. Biểu hiện nội soi da phổ biến nhất là các đường lưới ở ngoại vi với một mảng trắng trung tâm biểu thị sự xơ hóa. </p>
+                
+                {% elif data[0] == 'mel'%}
+                <h2>Tôi nghĩ bạn bị Melanoma (mel)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+                
+                <p> Ung thư hắc tố là một loại ung thư ác tính có nguồn gốc từ các tế bào hắc tố có thể xuất hiện trong các biến thể khác nhau. Nếu cắt bỏ ở giai đoạn đầu, nó có thể được chữa khỏi bằng cách cắt bỏ phẫu thuật đơn giản. U hắc tố có thể xâm lấn hoặc không xâm lấn (tại chỗ). </p>
+                
+                {% elif data[0] == 'nv'%}
+                <h2>Tôi nghĩ bạn bị Melanocytic nevi (nv)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+                
+                <p>Tế bào hắc tố là những khối u lành tính của tế bào hắc tố và xuất hiện trong vô số biến thể. Các biến thể có thể khác nhau đáng kể theo quan điểm soi da. Ngược lại với u ác tính, chúng thường đối xứng về sự phân bố màu sắc và cấu trúc.</p>
+                
+                {% elif data[0] == 'vasc'%}
+                <h2>Tôi nghĩ bạn bị Vascular lesions (vas)</h2>
+                
+                <h3>Độ chính xác: {{data[1]}}</h3>
+                <p> Các tổn thương da mạch máu trong bộ dữ liệu bao gồm từ u mạch anh đào đến u mạch và u hạt sinh mủ. Xuất huyết cũng được bao gồm trong danh mục này. U mạch có đặc điểm da liễu là có màu đỏ hoặc màu tím và cấu trúc rắn, được bao quanh tốt, được gọi là cục đỏ hoặc lớp sơn màu đỏ.</p>
+                
+                {%else%}
+                    <h2> Không xác định </h2>
+                
+                {%endif%}
+
+            </div>
+            <div>
+                <a href="/" class='btn'>go back</a>
+            </div>
+        </center>
+        
+    </body>
+</html>
